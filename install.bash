@@ -1,8 +1,10 @@
 #!/bin/bash
 
 sudo apt-get -y install python3-pip fish
-sudo pip install flake8 green
+mkdir -p ~/.config/fish
+echo "set -Ux EDITOR vim" >> ~/.config/fish/config.fish
 sudo chsh -s $(which fish) $(whoami)
+sudo pip install flake8 green
 
 wget https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 mkdir -p ~/.vim/autoload
