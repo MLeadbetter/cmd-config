@@ -19,6 +19,11 @@ if [[ -z $is_ubuntu ]]; then
     sudo apt-get -y install python-dev python3-dev
     git clone https://github.com/Valloric/YouCompleteMe
     cd YouCompleteMe
+    freemem=$(free -bt | grep Mem | sed "s/^\s*Mem:\s*//" | cut -d' ' -f1)
     git submodule update --init --recursive
-    ./install.py --clang-completer
+    if [[ $freemem > 4*1024*1024*1024 ]]; then
+        ./install.py --clang-completer
+    else
+        ./install.py
+    fi
 fi
