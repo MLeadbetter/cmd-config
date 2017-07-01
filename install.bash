@@ -1,10 +1,5 @@
 #!/bin/bash
 
-if [ $EUID -ne 0 ]; then
-	echo "Please run as root"
-	exit
-fi
-
 sudo apt-get -y install python3-pip fish
 sudo pip install flake8 green
 sudo chsh -s $(which fish) $(whoami)
