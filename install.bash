@@ -4,16 +4,20 @@ sudo apt-get -y install python3-pip fish
 sudo pip install flake8 green
 sudo chsh -s $(which fish) $(whoami)
 
-ln -s ~/.vimrc .vimrc
-ln -s ~/.tmux.conf .tmux.conf
-ln -s ~/.tmux.conf.local .tmux.conf.local
-mkdir -p .vim/bundle
-cd .vim/bundle
+wget https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+mkdir -p ~/.vim/autoload
+mv pathogen.vim ~/.vim/autoload
+
+ln -s .vimrc ~/.vimrc 
+ln -s .tmux.conf ~/.tmux.conf
+ln -s .tmux.conf.local ~/.tmux.conf.local
+mkdir -p ~/.vim/bundle
+cd ~/.vim/bundle
 git clone https://github.com/vim-syntastic/syntastic.git
 git clone https://github.com/nvie/vim-flake8.git
 git clone https://github.com/tpope/vim-sensible.git
 
-is_ubuntu=$(0python -mplatform | grep -qi Ubuntu)
+is_ubuntu=$(python -mplatform | grep -qi Ubuntu)
 if [[ -z $is_ubuntu ]]; then
     sudo apt-get -y install build-essential cmake
     sudo apt-get -y install python-dev python3-dev
