@@ -13,6 +13,9 @@ mv pathogen.vim ~/.vim/autoload
 ln -s .vimrc ~/.vimrc 
 ln -s .tmux.conf ~/.tmux.conf
 ln -s .tmux.conf.local ~/.tmux.conf.local
+ln -s .i3 ~/.i3
+ln -s .Xresources ~/.Xresources
+
 mkdir -p ~/.vim/bundle
 cd ~/.vim/bundle
 git clone https://github.com/vim-syntastic/syntastic.git
