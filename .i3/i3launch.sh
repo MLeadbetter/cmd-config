@@ -34,7 +34,5 @@ else
     #xrandr --output HDMI1 --right-of LVDS1 &
     i3-msg 'workspace 1: WWW; exec /usr/bin/firefox'
     sleep 2
-    i3-msg 'workspace 2: IM; exec /usr/bin/urxvt -e tmux'
-    sleep 2
-    i3-msg 'workspace 3: Shell; exec /usr/bin/urxvt'
+    i3-msg 'workspace 2: Shell; exec /usr/bin/urxvt -e tmux'
 fi

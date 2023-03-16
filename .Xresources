@@ -3,6 +3,10 @@
 *scrollBar: false
 *8borderLess: false
 
+
+URxvt.font: xft:JetBrains Mono Medium:size=10
+URxvt.boldFont: xft:JetBrains Mono Medium:size=10
+
 ! terminal colors ------------------------------------------------------------
 
 ! tangoesque scheme

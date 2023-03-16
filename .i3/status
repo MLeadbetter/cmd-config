@@ -3,16 +3,14 @@ general {
         interval = 5
 }
 
-order += "disk /home/"
-order += "wireless wlp3s0"
-order += "ethernet enp4s0"
+order += "memory"
+order += "wireless wlp42s0"
 order += "battery 0"
-order += "load"
 order += "tztime local"
 
-wireless wlp3s0 {
-        format_up = "W: (%quality at %essid, %bitrate) %ip"
-        format_down = "W: down"
+wireless wlp42s0 {
+        format_up = "🛜 %essid"
+        format_down = "🛜 down"
 }
 
 ethernet enp4s0 {
@@ -24,6 +22,12 @@ battery 0 {
         format = "%status %percentage %remaining"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 10
+
+	status_chr = "⚡"
+
+	status_bat = "🔋"
+
+	low_threshold = 10
 }
 
 tztime local {
@@ -36,5 +40,9 @@ load {
 
 disk "/home/" {
         format = "%free"
+}
+
+memory {
+	format = "%percentage_used"
 }
 
